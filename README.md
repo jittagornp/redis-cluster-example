@@ -49,3 +49,16 @@ vi redis-cluster-example/docker-run-redis-cluster.sh
 ```sh
 $ ./docker-run-redis-cluster.sh
 ```
+
+# Test 
+
+1. Remote to container 
+```sh
+$ docker exec -it redis bash 
+```
+
+2. Use Redis CLI 
+```sh
+$ redis-cli -c -h <NODE_IP> -p 6379 -a <YOUR_REDIS_PASSWORD> 
+> cluster nodes 
+```
