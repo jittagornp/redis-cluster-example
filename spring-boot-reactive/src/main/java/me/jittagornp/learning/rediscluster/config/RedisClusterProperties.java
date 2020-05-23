@@ -14,6 +14,8 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "spring.redis.cluster")
 public class RedisClusterProperties {
     
+    private String password;
+    
     private List<String> nodes;
     
 }

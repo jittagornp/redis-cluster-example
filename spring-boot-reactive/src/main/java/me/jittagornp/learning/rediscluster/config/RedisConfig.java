@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.redis.connection.ReactiveRedisConnectionFactory;
 import org.springframework.data.redis.connection.RedisClusterConfiguration;
+import org.springframework.data.redis.connection.RedisPassword;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.ReactiveRedisOperations;
 import org.springframework.data.redis.core.ReactiveRedisTemplate;
@@ -30,7 +31,9 @@ public class RedisConfig {
     @Bean
     @Primary
     public ReactiveRedisConnectionFactory connectionFactory() {
-        return new LettuceConnectionFactory(new RedisClusterConfiguration(clusterProperties.getNodes()));
+        final RedisClusterConfiguration redisClusterConfiguration = new RedisClusterConfiguration(clusterProperties.getNodes());
+        redisClusterConfiguration.setPassword(RedisPassword.of(clusterProperties.getPassword()));
+        return new LettuceConnectionFactory(redisClusterConfiguration);
     }
 
     private <T extends Object> ReactiveRedisOperations<String, T> redisOperations(
