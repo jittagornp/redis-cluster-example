@@ -16,7 +16,7 @@
 
 # Install
 
-### All Nodes 
+### All Nodes (6 Nodes)
 1. Clone this Source Code
 
 ```sh
