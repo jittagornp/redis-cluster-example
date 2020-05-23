@@ -33,6 +33,7 @@ $ ./install-docker.sh
 
 3. Install Redis 
 
+> *** Don't forget change redis password in this file before execute
 ```
 $ ./docker-run-redis.sh 
 ```
