@@ -13,4 +13,4 @@ docker rmi spring-boot-reactive || true
 docker build -t spring-boot-reactive .
 
 # run container
-docker run -d --name=spring-boot-reactive -p 8080:8080 --restart=always --link=mysql spring-boot-reactive
+docker run -d --name=spring-boot-reactive -p 8080:8080 --restart=always spring-boot-reactive
