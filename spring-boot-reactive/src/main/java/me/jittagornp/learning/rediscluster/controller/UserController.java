@@ -2,6 +2,7 @@ package me.jittagornp.learning.rediscluster.controller;
 
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import me.jittagornp.learning.rediscluster.model.User;
 import org.springframework.data.redis.core.ReactiveRedisOperations;
 import org.springframework.http.HttpStatus;
@@ -21,6 +22,7 @@ import reactor.core.publisher.Mono;
  *
  * @author jitta
  */
+@Slf4j
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
@@ -36,6 +38,7 @@ public class UserController {
     public Flux<User> findAll() {
         return userRedisOperations.keys(makeKey("*"))
                 .flatMap(key -> {
+                    log.debug("key => {}", key);
                     return userRedisOperations.opsForValue()
                             .get(key);
                 });
@@ -86,6 +89,7 @@ public class UserController {
     public Flux<Void> deleteAll() {
         return userRedisOperations.keys(makeKey("*"))
                 .flatMap(key -> {
+                    log.debug("key => {}", key);
                     return userRedisOperations.opsForValue()
                             .delete(key)
                             .then();
