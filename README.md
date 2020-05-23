@@ -2,6 +2,11 @@
 
 <img src="./redis-cluster.png" width="400"/>
 
+# Document 
+
+- [https://redis.io/topics/cluster-tutorial](https://redis.io/topics/cluster-tutorial)
+- [Cluster Command](https://redis.io/commands/cluster-addslots)
+
 # Requires
 
 - Server : 6 Nodes 
@@ -34,7 +39,7 @@ $ ./docker-run-redis.sh
 
 ### On Node 1
 
-1. Change Node IP Address
+1. Change Node IP Address in file 
 ```sh
 vi redis-cluster-example/docker-run-redis-cluster.sh
 ```
