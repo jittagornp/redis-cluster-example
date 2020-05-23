@@ -2,7 +2,7 @@
 
 # Requires
 
-- Server 6 Nodes 
+- Server : 6 Nodes 
   - 3 Masters
   - 3 Slaves 
 - OS : Ubuntu 18.04 LTS
