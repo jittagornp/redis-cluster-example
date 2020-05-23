@@ -1,5 +1,7 @@
 # Redis Cluster Example
 
+<img src="./redis-cluster.png" width="400"/>
+
 # Requires
 
 - Server : 6 Nodes 
