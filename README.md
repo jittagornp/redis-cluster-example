@@ -62,3 +62,7 @@ $ docker exec -it redis bash
 $ redis-cli -c -h <NODE_IP> -p 6379 -a <YOUR_REDIS_PASSWORD> 
 > cluster nodes 
 ```
+
+# Client Tool
+
+- [https://github.com/luin/medis](https://github.com/luin/medis)
