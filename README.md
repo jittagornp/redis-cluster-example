@@ -7,7 +7,7 @@
 - [https://redis.io/topics/cluster-tutorial](https://redis.io/topics/cluster-tutorial)
 - [Cluster Command](https://redis.io/commands/cluster-addslots)
 
-# Requires
+# Prerequisites
 
 - Server : 6 Nodes 
   - 3 Masters
